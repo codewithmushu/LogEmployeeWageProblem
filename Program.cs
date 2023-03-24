@@ -148,7 +148,10 @@ namespace assignment_no__8
 
 
 
-            Refactoringcode.ComputeWage();
+            //Refactoringcode.ComputeWage();
+
+            MultipleCompEmpWage.ComputeWage("ABC Company", 25, 8, 4, 25, 120);
+            MultipleCompEmpWage.ComputeWage("XYZ Company", 30, 9, 5, 20, 100);
 
         }
     }
