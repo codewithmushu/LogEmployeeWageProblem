@@ -84,26 +84,66 @@ namespace assignment_no__8
 
 
 
-            Console.WriteLine("Enter full-time employee name:");
-            string ftName = Console.ReadLine();
-            MonthlyWage ftEmp = new MonthlyWage(ftName);
+            //Console.WriteLine("Enter full-time employee name:");
+            //string ftName = Console.ReadLine();
+            //MonthlyWage ftEmp = new MonthlyWage(ftName);
 
-            Console.WriteLine("Enter part-time employee name:");
-            string ptName = Console.ReadLine();
-            MonthlyWage ptEmp = new MonthlyWage(ptName);
+            //Console.WriteLine("Enter part-time employee name:");
+            //string ptName = Console.ReadLine();
+            //MonthlyWage ptEmp = new MonthlyWage(ptName);
 
-            Console.WriteLine("Enter the number of hours worked by {0}:", ftName);
-            int ftHours = int.Parse(Console.ReadLine());
-            ftEmp.SetHoursWorked(ftHours);
-            ftEmp.CalculateMonthlyWage();
+            //Console.WriteLine("Enter the number of hours worked by {0}:", ftName);
+            //int ftHours = int.Parse(Console.ReadLine());
+            //ftEmp.SetHoursWorked(ftHours);
+            //ftEmp.CalculateMonthlyWage();
 
-            Console.WriteLine("Enter the number of hours worked by {0}:", ptName);
-            int ptHours = int.Parse(Console.ReadLine());
-            ptEmp.SetHoursWorked(ptHours);
-            ptEmp.CalculateMonthlyWage();
+            //Console.WriteLine("Enter the number of hours worked by {0}:", ptName);
+            //int ptHours = int.Parse(Console.ReadLine());
+            //ptEmp.SetHoursWorked(ptHours);
+            //ptEmp.CalculateMonthlyWage();
 
-            // Wait for user input before closing the console window
-            Console.ReadKey();
+            //// Wait for user input before closing the console window
+            //Console.ReadKey();
+
+
+
+
+            FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("John", "Doe", 8);
+            PartTimeEmployee partTimeEmployee = new PartTimeEmployee("Jane", "Doe", 4);
+
+            int totalWorkingHours = 0;
+            int totalWorkingDays = 0;
+            int maxWorkingHours = 100;
+            int maxWorkingDays = 20;
+
+            while (totalWorkingHours < maxWorkingHours && totalWorkingDays < maxWorkingDays)
+            {
+                int hoursWorkedToday = fullTimeEmployee.Work();
+                totalWorkingHours += hoursWorkedToday;
+                totalWorkingDays++;
+
+                Console.WriteLine("{0} worked {1} hours today.", fullTimeEmployee.FullName, hoursWorkedToday);
+
+                if (totalWorkingHours >= maxWorkingHours || totalWorkingDays >= maxWorkingDays)
+                {
+                    break;
+                }
+
+                hoursWorkedToday = partTimeEmployee.Work();
+                totalWorkingHours += hoursWorkedToday;
+
+                Console.WriteLine("{0} worked {1} hours today.", partTimeEmployee.FullName, hoursWorkedToday);
+            }
+
+            int fullTimeWage = fullTimeEmployee.CalculateWage(totalWorkingHours);
+            int partTimeWage = partTimeEmployee.CalculateWage(totalWorkingHours);
+
+            int totalWage = fullTimeWage + partTimeWage;
+
+            Console.WriteLine("{0} earned {1} rupees this month.", fullTimeEmployee.FullName, fullTimeWage);
+            Console.WriteLine("{0} earned {1} rupees this month.", partTimeEmployee.FullName, partTimeWage);
+            Console.WriteLine("Total wages for the month: {0} rupees.", totalWage);
+        
         }
     }
 }
