@@ -37,23 +37,50 @@ namespace assignment_no__8
 
 
 
-            // Create an instance of the Employee class for full-time employee
-            PartTimeEmpWage empFullTime = new PartTimeEmpWage();
-            empFullTime.SetHoursWorked(8);
-            empFullTime.DisplayWage();
+            //// Create an instance of the Employee class for full-time employee
+            //PartTimeEmpWage empFullTime = new PartTimeEmpWage();
+            //empFullTime.SetHoursWorked(8);
+            //empFullTime.DisplayWage();
 
-            // Create an instance of the Employee class for part-time employee
-            PartTimeEmpWage empPartTime = new PartTimeEmpWage();
-            empPartTime.SetHoursWorked(4);
-            empPartTime.SetIsPartTime(true);
-            empPartTime.DisplayWage();
+            //// Create an instance of the Employee class for part-time employee
+            //PartTimeEmpWage empPartTime = new PartTimeEmpWage();
+            //empPartTime.SetHoursWorked(4);
+            //empPartTime.SetIsPartTime(true);
+            //empPartTime.DisplayWage();
+
+            //// Wait for user input before closing the console window
+            //Console.ReadKey();
+
+
+
+            Console.WriteLine("Enter employee name:");
+            string name = Console.ReadLine();
+
+            CaseStatement emp = new CaseStatement(name);
+
+            Console.WriteLine("Is the employee full-time or part-time? (F/P)");
+            char type = char.Parse(Console.ReadLine());
+
+            switch (type)
+            {
+                case 'F':
+                case 'f':
+                    Console.WriteLine("Sorry, full-time employees are not supported in this program.");
+                    break;
+                case 'P':
+                case 'p':
+                    Console.WriteLine("Enter the number of hours worked:");
+                    int hours = int.Parse(Console.ReadLine());
+                    emp.SetHoursWorked(hours);
+                    emp.CalculateWage();
+                    break;
+                default:
+                    Console.WriteLine("Invalid employee type.");
+                    break;
+            }
 
             // Wait for user input before closing the console window
             Console.ReadKey();
-
-
-
-
         }
     }
 }
