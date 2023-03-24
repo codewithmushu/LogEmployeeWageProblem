@@ -108,42 +108,48 @@ namespace assignment_no__8
 
 
 
-            FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("John", "Doe", 8);
-            PartTimeEmployee partTimeEmployee = new PartTimeEmployee("Jane", "Doe", 4);
+            //FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("John", "Doe", 8);
+            //PartTimeEmployee partTimeEmployee = new PartTimeEmployee("Jane", "Doe", 4);
 
-            int totalWorkingHours = 0;
-            int totalWorkingDays = 0;
-            int maxWorkingHours = 100;
-            int maxWorkingDays = 20;
+            //int totalWorkingHours = 0;
+            //int totalWorkingDays = 0;
+            //int maxWorkingHours = 100;
+            //int maxWorkingDays = 20;
 
-            while (totalWorkingHours < maxWorkingHours && totalWorkingDays < maxWorkingDays)
-            {
-                int hoursWorkedToday = fullTimeEmployee.Work();
-                totalWorkingHours += hoursWorkedToday;
-                totalWorkingDays++;
+            //while (totalWorkingHours < maxWorkingHours && totalWorkingDays < maxWorkingDays)
+            //{
+            //    int hoursWorkedToday = fullTimeEmployee.Work();
+            //    totalWorkingHours += hoursWorkedToday;
+            //    totalWorkingDays++;
 
-                Console.WriteLine("{0} worked {1} hours today.", fullTimeEmployee.FullName, hoursWorkedToday);
+            //    Console.WriteLine("{0} worked {1} hours today.", fullTimeEmployee.FullName, hoursWorkedToday);
 
-                if (totalWorkingHours >= maxWorkingHours || totalWorkingDays >= maxWorkingDays)
-                {
-                    break;
-                }
+            //    if (totalWorkingHours >= maxWorkingHours || totalWorkingDays >= maxWorkingDays)
+            //    {
+            //        break;
+            //    }
 
-                hoursWorkedToday = partTimeEmployee.Work();
-                totalWorkingHours += hoursWorkedToday;
+            //    hoursWorkedToday = partTimeEmployee.Work();
+            //    totalWorkingHours += hoursWorkedToday;
 
-                Console.WriteLine("{0} worked {1} hours today.", partTimeEmployee.FullName, hoursWorkedToday);
-            }
+            //    Console.WriteLine("{0} worked {1} hours today.", partTimeEmployee.FullName, hoursWorkedToday);
+            //}
 
-            int fullTimeWage = fullTimeEmployee.CalculateWage(totalWorkingHours);
-            int partTimeWage = partTimeEmployee.CalculateWage(totalWorkingHours);
+            //int fullTimeWage = fullTimeEmployee.CalculateWage(totalWorkingHours);
+            //int partTimeWage = partTimeEmployee.CalculateWage(totalWorkingHours);
 
-            int totalWage = fullTimeWage + partTimeWage;
+            //int totalWage = fullTimeWage + partTimeWage;
 
-            Console.WriteLine("{0} earned {1} rupees this month.", fullTimeEmployee.FullName, fullTimeWage);
-            Console.WriteLine("{0} earned {1} rupees this month.", partTimeEmployee.FullName, partTimeWage);
-            Console.WriteLine("Total wages for the month: {0} rupees.", totalWage);
-        
+            //Console.WriteLine("{0} earned {1} rupees this month.", fullTimeEmployee.FullName, fullTimeWage);
+            //Console.WriteLine("{0} earned {1} rupees this month.", partTimeEmployee.FullName, partTimeWage);
+            //Console.WriteLine("Total wages for the month: {0} rupees.", totalWage);
+
+
+
+
+
+            Refactoringcode.ComputeWage();
+
         }
     }
 }
